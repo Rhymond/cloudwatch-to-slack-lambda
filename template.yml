@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Cloudwatch log transporter to Slack"
+Transform: "AWS::Serverless-2016-10-31"
+
+Globals:
+  Function:
+    Handler: "main"
+    Timeout: 10
+    Runtime: "go1.x"
+
+Resources:
+  transporter:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      CodeUri: "./cmd"
+      Environment:
+        Variables:
+          SLACK_TOKEN: "xoxb-12397761536-4705205380997-3E4v4FSGoA7hJsl5HzgjvyVE"
+          CHANNEL_ID: "C04555QG6QP"

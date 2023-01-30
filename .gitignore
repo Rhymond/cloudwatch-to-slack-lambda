@@ -1,3 +1,4 @@
 samconfig.yml
 .env
 bin/cmd
+.aws-sam
